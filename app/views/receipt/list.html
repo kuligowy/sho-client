@@ -1,0 +1,21 @@
+<p>This is the receipts view.</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <a href="#/receipt" class="btn btn-primary">Add new</a>
+    </div>
+  </div>
+</div>
+  <div ng-repeat="receipt in receipts | orderBy: '-event_time'">
+    <div class="container">
+      <div class="row">
+        <h3>
+        <div class="col-md-4">{{receipt.eventTime}}</div>
+        <div class="col-md-4">{{receipt.shop.name}}</div>
+        <div class="col-md-3">{{receipt.total | currency}}</div>
+        <div class="col-md-1"><a href="#/receipts/{{receipt.id}}" class="btn btn-primary">Show</a></div>
+      </h3>
+      </div>
+    </div>
+    <hr>
+  </div>

@@ -1,0 +1,29 @@
+<p>This is the /receipt/newItem view.</p>
+{{receipt}}
+<table class="table">
+  <thead><tr>
+    <td>Item</td>
+    <td>Price</td>
+    <td>Quantity</td>
+  </tr>
+</thead>
+  <tbody>
+    <tr>
+    <td><input type="text" class="form-control" id="Item" placeholder="item" ng-model="receiptItem.item"> </td>
+    <td><input type="text" class="form-control" id="priveInput" placeholder="price" ng-model="receiptItem.price"></td>
+    <td><input type="text" class="form-control" id="qtyInput" placeholder="qty" ng-model="receiptItem.quantity"></td>
+    <td></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-condensed" >
+  <tbody>
+    <tr ng-repeat="ritem in receipt.items">
+    <td><input type="text" class="form-control" id="Item" placeholder="item" ng-model="ritem.item"> </td>
+    <td><input type="text" class="form-control" id="priveInput" placeholder="price" ng-model="ritem.price"></td>
+    <td><input type="text" class="form-control" id="qtyInput" placeholder="qty" ng-model="ritem.quantity"></td>
+    <td></td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-default" ng-click="addItem()">Add</button>

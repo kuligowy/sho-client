@@ -3,42 +3,11 @@
   <div class="form-group">
     <label for="eventtime">Event time</label>
     <input type="date" class="form-control" id="eventtime" placeholder="date" ng-model="receipt.eventTime">
-
   </div>
   <div class="form-group">
     <label for="shopInput">Shop</label>
-    <input type="text" class="form-control" id="shopInput" placeholder="shop" ng-model="receipt.shop">
+    <select class="form-control" id="shopInput" ng-options="shop.name for shop in shops" ng-model="receipt.shop"></select>
   </div>
 </form>
-<table class="table">
-  <thead><tr>
-    <td>Item</td>
-    <td>Price</td>
-    <td>Quantity</td>
-  </tr>
-</thead>
-  <tbody>
-    <tr>
-    <td><input type="text" class="form-control" id="Item" placeholder="item" ng-model="receiptItem.item"> </td>
-    <td><input type="text" class="form-control" id="priveInput" placeholder="price" ng-model="receiptItem.price"></td>
-    <td><input type="text" class="form-control" id="qtyInput" placeholder="qty" ng-model="receiptItem.quantity"></td>
-    <td></td>
-    </tr>
-  </tbody>
-</table>
-<table class="table table-condensed" >
-  <tbody>
-    <tr ng-repeat="ritem in receipt.items">
-    <td><input type="text" class="form-control" id="Item" placeholder="item" ng-model="ritem.item"> </td>
-    <td><input type="text" class="form-control" id="priveInput" placeholder="price" ng-model="ritem.price"></td>
-    <td><input type="text" class="form-control" id="qtyInput" placeholder="qty" ng-model="ritem.quantity"></td>
-    <td></td>
-    </tr>
-  </tbody>
-</table>
-Total:{{total()}}
 {{receipt}}
----<br />
-{{sum}}
-  <button class="btn btn-default" ng-click="addItem()">Add</button>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn btn-default" ng-click="save()">Submit</button>

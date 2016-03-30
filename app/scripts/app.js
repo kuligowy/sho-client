@@ -47,6 +47,11 @@ angular
           controller: 'NewReceiptCtrl',
           controllerAs: 'newReceiptCtrl'
       })
+      .when('/receipt/:id/items', {
+        templateUrl: 'views/receipt/additem.html',
+        controller: 'ReceiptNewitemCtrl',
+        controllerAs: '/receipt/additem'
+      })
       .otherwise({
         redirectTo: '/404.html'
       });

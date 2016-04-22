@@ -17,8 +17,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'underscore'
+    'ngTouch'
     ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -47,7 +46,7 @@ angular
           controller: 'NewReceiptCtrl',
           controllerAs: 'newReceiptCtrl'
       })
-      .when('/receipt/:id/items', {
+      .when('/receipt/:id/item', {
         templateUrl: 'views/receipt/additem.html',
         controller: 'ReceiptNewitemCtrl',
         controllerAs: '/receipt/additem'

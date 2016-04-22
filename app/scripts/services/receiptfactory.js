@@ -8,16 +8,12 @@
  * Factory in the shoClientApp.
  */
 angular.module('shoClientApp')
-  .factory('receiptFactory',[function () {
+  .factory('receiptFactory',['$resource', function ($resource) {
     // Service logic
-    // ...
-
+    var API_URL = "http://localhost:8080";
     var meaningOfLife = 42;
 
     // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
+    return $resource(API_URL+"/receipt/:id",{id: '@id'});
+
   }]);

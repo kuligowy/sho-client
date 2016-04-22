@@ -8,24 +8,9 @@
  * Controller of the shoClientApp
  */
 angular.module('shoClientApp')
-  .controller('ReceiptCtrl', ['$scope',function ($scope) {
+  .controller('ReceiptCtrl', ['$scope','receiptFactory',function ($scope,receiptFactory) {
 
-    $scope.receipts = [{
-        id: 1,
-        shop:{
-          id: 1,
-          name: 'biedronka'
-        },
-        total: 10,
-        eventTime: '2016-03-26'
-    },{
-        id: 2,
-        shop:{
-          id: 1,
-          name: 'biedronka'
-        },
-        total: 20,
-        eventTime: '2016-03-24'
-    }
-  ];
-}]);
+    $scope.receipts = receiptFactory.query();
+    
+}
+]);

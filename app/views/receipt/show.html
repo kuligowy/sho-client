@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <h3>
-      <div class="col-md-4">{{receipt.event_time}}</div>
+      <div class="col-md-4">{{receipt.eventTime}}</div>
       <div class="col-md-4 text-center">{{receipt.shop.name}}</div>
       <div class="col-md-4 text-right">{{receipt.total | currency}}</div>
     </h3>
@@ -12,9 +12,9 @@
   <tr>
     <td>lp</td><td>Item</td><td>price</td><td>quantity</td><td>total</td>
   </tr>
-  <tr ng-repeat="ritem in receipt.items">
+  <tr ng-repeat="ritem in receipt.receiptItems">
     <td>{{$index+1}}.</td>
-    <td>{{ritem.item.name}}</td>
+    <td>{{ritem.article.name}}</td>
     <td>{{ritem.price}}</td>
     <td> {{ritem.quantity}}</td>
     <td>{{ritem.price * ritem.quantity}}</td>

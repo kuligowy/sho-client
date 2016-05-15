@@ -8,30 +8,10 @@
  * Controller of the shoClientApp
  */
 angular.module('shoClientApp')
-  .controller('ShowReceiptCtrl', ['$scope', function ($scope) {
-    $scope.receipt = {
-        id: 1,
-        shop:{
-          id: 1,
-          name: 'biedronka'
-        },
-        items: [{
-          item:{
-            name: 'cottage chese'
-          },
-          price: 10,
-          quantity: 10
-        },
-        {
-          item:{
-            name: 'eggs'
-          },
-          price: 1.2,
-          quantity: 10
-        }
-      ],
-        total: 10,
-        eventTime: '2016-03-26'
-    };
+  .controller('ShowReceiptCtrl', ['$scope','$log','$routeParams','receiptFactory',
+    function ($scope,$log, $routeParams,receiptFactory) {
+    $scope.id = $routeParams.id;
+    $log.info("id _ "+$scope.id)
+    $scope.receipt = receiptFactory.get({id: $scope.id});
 
   }]);

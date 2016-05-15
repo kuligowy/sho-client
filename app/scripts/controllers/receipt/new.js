@@ -17,11 +17,11 @@ angular.module('shoClientApp')
     };
     $scope.save = function(){
       $log.info('saving receipt...');
-      receiptFactory.save($scope.receipt,function(response, respHeaders){
-        $log.info(respHeaders());
-        $log.info(respHeaders('Location'));
+      receiptFactory.save($scope.receipt,function(response,headers){
+        $log.info();
+      //  id = response.id;
+      $location.path("/receipt/"+response.id+"/item");
       });
-    //  $location.path("/receipt/1/item")
     };
 
   }]);
